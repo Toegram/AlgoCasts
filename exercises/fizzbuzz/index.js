@@ -12,6 +12,30 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+
+function fizzBuzz(n) {
+
+  for (let num = 1; num <= n; num++) {
+
+    //is the number divisible by 3 and by 5 ?
+    if (num % 3 === 0 && num % 5 === 0) {
+      console.log('fizzbuzz')
+
+    //is the number divisible by 3 ?
+    } else if (num % 3 === 0) {
+      console.log('fizz')
+
+    //is the number divisibile by 5 ?
+    } else if (num % 5 === 0) {
+      console.log('buzz')
+
+    //every other number must not be divisible by 3 or 5 ?
+    } else {
+      console.log(num)
+    }
+  }
+
+}
+
 
 module.exports = fizzBuzz;
