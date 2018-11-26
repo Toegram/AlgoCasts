@@ -6,24 +6,44 @@
 // maxChar("apple 1231111") === "1"
 
 function maxChar(str) {
+  const obj = {};
 
-  const obj = {}
-
-  let max = 0
-  let maxChar = ''
+  //stores highest counter char + count
+  let maxChar = "";
+  let maxCount = 0;
 
   for (let char of str) {
-    obj[char] ? obj[char]++ : obj[char] = 1
+    obj[char] ? obj[char]++ : (obj[char] = 1);
+    console.log(char);
   }
 
   for (let key in obj) {
-    if (obj[key] > max){
-     max = obj[key]
-     maxChar = key
+    if (obj[key] > maxCount) {
+      maxChar = key;
+      maxCount = obj[key];
     }
   }
 
-  return maxChar
+  return maxChar;
 }
-
 module.exports = maxChar;
+
+//
+//   const obj = {}
+//
+//   let max = 0
+//   let maxChar = ''
+//
+//   for (let char of str) {
+//     obj[char] ? obj[char]++ : obj[char] = 1
+//   }
+//
+//   for (let key in obj) {
+//     if (obj[key] > max){
+//      max = obj[key]
+//      maxChar = key
+//     }
+//   }
+//
+//   return maxChar
+// }
